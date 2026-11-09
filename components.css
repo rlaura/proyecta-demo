@@ -1,0 +1,358 @@
+/* ---------------------------------- */
+/* DASHBOARD CARD */
+/* ---------------------------------- */
+
+.dashboard-card{
+
+    background:var(--surface);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    transition:.2s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.dashboard-card i{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.dashboard-card h3{
+
+    font-size:2rem;
+
+    margin-bottom:5px;
+
+}
+
+.dashboard-card p{
+
+    color:var(--text-light);
+
+    margin:0;
+
+}
+
+.dashboard-card h6{
+
+    margin-top:10px;
+
+    font-weight:600;
+
+}
+
+.dashboard-card small{
+
+    color:var(--text-light);
+
+}
+
+/* ---------------------------------- */
+/* TITULOS */
+/* ---------------------------------- */
+
+.section-title{
+
+    font-size:1.5rem;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.notification{
+
+    position:relative;
+
+    font-size:1.2rem;
+
+}
+
+.notification .badge{
+
+    position:absolute;
+
+    top:-8px;
+
+    right:-10px;
+
+    font-size:.6rem;
+
+}
+
+.project-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.2s;
+
+    cursor:pointer;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.project-header{
+
+    margin-bottom:40px;
+
+}
+
+.project-logo{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+}
+
+.info-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    height:100%;
+
+}
+
+.info-card i{
+
+    font-size:1.7rem;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.project-tabs{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+    padding:0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.project-tabs li{
+
+    padding:15px 0;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+}
+
+.project-tabs li.active{
+
+    color:var(--primary);
+
+    border-bottom:3px solid var(--primary);
+
+}
+
+.team-card{
+
+    position:relative;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.25s;
+
+}
+
+.team-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.team-logo{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.team-color{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:6px;
+
+    height:100%;
+
+    border-radius:20px 0 0 20px;
+
+}
+
+.project-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:25px;
+
+    height:100%;
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 14px 32px rgba(0,0,0,.12);
+
+}
+
+.project-card h3{
+
+    font-size:1.4rem;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.team-preview{
+
+    border-top:1px solid var(--border);
+
+    padding-top:18px;
+
+}
+
+.team-badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:.8rem;
+
+    margin-right:6px;
+
+    margin-bottom:6px;
+
+}
+
+.team-header{
+
+    margin-bottom:40px;
+
+}
+
+.team-logo-large{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+}
+
+.task-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    transition:.2s;
+
+}
+
+.task-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.task-card ul{
+
+    margin-top:10px;
+
+    margin-bottom:20px;
+
+}
+
+.task-card li{
+
+    margin-bottom:8px;
+
+}
+

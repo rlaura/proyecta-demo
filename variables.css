@@ -1,0 +1,36 @@
+:root{
+
+    /* Colores */
+
+    --primary:#5B3DBD;
+    --primary-light:#A27AE8;
+
+    --secondary:#00B8A9;
+
+    --background:#F5F7FB;
+
+    --surface:#FFFFFF;
+
+    --text:#2D3142;
+
+    --text-light:#6C757D;
+
+    --success:#4CAF50;
+
+    --warning:#FFC107;
+
+    --danger:#EF5350;
+
+    --border:#E5E7EB;
+
+    --sidebar:#4A2FB0;
+    
+    /* Bordes */
+
+    --radius:16px;
+
+    /* Sombras */
+
+    --shadow:0 8px 24px rgba(0,0,0,.08);
+
+}

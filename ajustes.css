@@ -1,0 +1,372 @@
+/* =========================================================
+   AJUSTES DE COMPATIBILIDAD
+   Se carga DESPUÉS de styles.css. No modifica el diseño de
+   las pantallas originales: corrige choques entre las reglas
+   generales de components.css / layout.css y las pantallas nuevas.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. Alto de las tarjetas
+   .info-card tenía height:100% siempre. Eso estira la tarjeta
+   al alto de la columna: deja espacios en blanco y hace que el
+   contenido que sigue se superponga.
+   Ahora cada tarjeta mide lo que su contenido. Si alguna vez
+   hace falta que ocupe toda la columna, se le agrega la clase
+   h-100 de Bootstrap.
+   --------------------------------------------------------- */
+
+.info-card {
+    height: auto;
+}
+
+/* Las filas de resumen (Equipos, Cursos, Hitos, Tipo...) sí
+   mantienen todas las tarjetas del mismo alto */
+.row.mb-5 > [class*="col"] > .info-card:only-child {
+    height: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   2. Íconos dentro de las tarjetas
+   Solo el ícono principal de la tarjeta (hijo directo) se ve
+   grande; los de botones, etiquetas y listas, tamaño normal.
+   --------------------------------------------------------- */
+
+.info-card i {
+    font-size: inherit;
+    color: inherit;
+    margin-bottom: 0;
+}
+
+.info-card > i,
+.info-card .info-icon i {
+    font-size: 1.7rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.info-card > i.fs-4 {
+    font-size: 1.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   3. Espacios de títulos, párrafos y listas
+   layout.css pone margin:0 y padding:0 a todo (*).
+   Se recuperan los espacios básicos dentro del contenido.
+   :where() no suma especificidad, así que las clases de
+   Bootstrap (mb-0, mb-3, list-unstyled, etc.) siguen mandando.
+   --------------------------------------------------------- */
+
+:where(.content) :where(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: .5rem;
+    line-height: 1.25;
+}
+
+:where(.content) :where(p) {
+    margin-bottom: 1rem;
+}
+
+:where(.content) :where(ul, ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+:where(.content) :where(.list-unstyled) {
+    padding-left: 0;
+}
+
+:where(.content) :where(.form-label) {
+    margin-bottom: .35rem;
+}
+
+:where(.content) :where(fieldset) {
+    margin-bottom: 1rem;
+}
+
+:where(.content) :where(details > summary) {
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   4. Detalles
+   --------------------------------------------------------- */
+
+/* Las tarjetas-enlace del panel de inicio no deben subrayarse */
+a.dashboard-card,
+a.dashboard-card:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Tablas dentro de tarjetas: sin borde inferior duplicado */
+.info-card > .table:last-child,
+.info-card .table:last-child {
+    margin-bottom: 0;
+}
+
+/* Los botones de estado de la asistencia no se parten en dos líneas */
+.btn-group .btn {
+    white-space: nowrap;
+}
+
+/* El buscador no empuja el contenido en pantallas chicas */
+@media (max-width: 768px) {
+    .search {
+        width: 100%;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   5. Colores de Bootstrap con la paleta de Proyecta
+   Los botones, enlaces y barras usaban el azul de Bootstrap;
+   ahora usan el violeta de variables.css.
+   --------------------------------------------------------- */
+
+:root {
+    --bs-primary: var(--primary);
+    --bs-primary-rgb: 91, 61, 189;
+    --bs-link-color: var(--primary);
+    --bs-link-color-rgb: 91, 61, 189;
+    --bs-link-hover-color: #452d93;
+    --bs-link-hover-color-rgb: 69, 45, 147;
+    --bs-primary-bg-subtle: #ece7fa;
+    --bs-primary-text-emphasis: #3d2680;
+    --bs-primary-border-subtle: #c9bcf0;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--primary);
+    --bs-btn-border-color: var(--primary);
+    --bs-btn-hover-bg: #4a30a3;
+    --bs-btn-hover-border-color: #4a30a3;
+    --bs-btn-active-bg: #3f2990;
+    --bs-btn-active-border-color: #3f2990;
+    --bs-btn-disabled-bg: var(--primary);
+    --bs-btn-disabled-border-color: var(--primary);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--primary);
+    --bs-btn-border-color: var(--primary);
+    --bs-btn-hover-bg: var(--primary);
+    --bs-btn-hover-border-color: var(--primary);
+    --bs-btn-active-bg: var(--primary);
+    --bs-btn-active-border-color: var(--primary);
+}
+
+.nav-pills {
+    --bs-nav-pills-link-active-bg: var(--primary);
+}
+
+.progress {
+    --bs-progress-bar-bg: var(--primary);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 .2rem rgba(91, 61, 189, .2);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+
+/* ---------------------------------------------------------
+   6. Clases que usan las pantallas y no tenían estilo
+   --------------------------------------------------------- */
+
+.breadcrumb-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: .9rem;
+    color: var(--text-light);
+}
+
+.breadcrumb-nav a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.breadcrumb-nav a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-nav i {
+    font-size: .75rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.form-container {
+    max-width: 760px;
+}
+
+.empty-state {
+    background: var(--surface);
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.empty-state > i {
+    display: block;
+    font-size: 2.2rem;
+    color: var(--primary-light);
+    margin-bottom: 10px;
+}
+
+.hito-card,
+.activity-card,
+.team-member-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px 20px;
+}
+
+.hito-card p {
+    white-space: pre-line;
+}
+
+.hito-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-member-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.team-member-card .avatar {
+    flex-shrink: 0;
+}
+
+.project-logo-placeholder,
+.team-logo-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background: var(--primary-bg, #ece7fa);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.project-logo-placeholder {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+.project-header .project-logo-placeholder {
+    margin: 0;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #ece7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-card .info-icon i {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+}
+
+.project-tabs a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Logo: si la imagen no carga, que no rompa la fila */
+.logo img {
+    height: 42px;
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   7. Planilla de notas
+   --------------------------------------------------------- */
+
+/* Barra con el botón de guardar, siempre visible al bajar */
+.barra-guardar {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--surface, #fff);
+    border-radius: var(--radius, 12px);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, .06);
+}
+
+/* Sin flechitas en los campos de nota (se escribe el número) */
+.campo-nota::-webkit-outer-spin-button,
+.campo-nota::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campo-nota {
+    -moz-appearance: textfield;
+    margin: 0 auto;
+}
+
+.tabla-notas th {
+    white-space: nowrap;
+}

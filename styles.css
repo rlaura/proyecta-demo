@@ -1,0 +1,15 @@
+@import url("variables.css");
+
+@import url("layout.css");
+
+@import url("components.css");
+
+body{
+
+font-family:"Poppins",sans-serif;
+
+background:var(--background);
+
+color:var(--text);
+
+}

@@ -1,0 +1,157 @@
+/* =========================================================
+   ESTILOS PROPIOS DE LA VERSIÓN DE DEMOSTRACIÓN
+   ========================================================= */
+
+.banner-demo {
+    background: #fff4d6;
+    color: #6b4e00;
+    border-bottom: 1px solid #f0d58a;
+    font-size: .85rem;
+    padding: 8px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.banner-demo button {
+    border: 1px solid #c9a227;
+    background: transparent;
+    color: inherit;
+    border-radius: 8px;
+    padding: 2px 10px;
+    font-size: .8rem;
+}
+
+.banner-demo button:hover {
+    background: #f6e3a6;
+}
+
+/* Pantalla de ingreso */
+.ingreso {
+    min-height: calc(100vh - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+}
+
+.ingreso-caja {
+    max-width: 880px;
+    width: 100%;
+}
+
+.tarjeta-rol {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--surface);
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    height: 100%;
+    color: inherit;
+    transition: .15s;
+}
+
+.tarjeta-rol:hover,
+.tarjeta-rol:focus-visible {
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.tarjeta-rol .icono-rol {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #ece7fa;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+/* Botones del menú lateral como enlaces */
+.sidebar nav button {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 0;
+    background: transparent;
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: white;
+    text-align: left;
+    transition: .2s;
+    font: inherit;
+}
+
+.sidebar nav button:hover {
+    background: rgba(255, 255, 255, .10);
+}
+
+.sidebar nav button.active {
+    background: white;
+    color: var(--primary);
+}
+
+.fecha-demo {
+    font-size: .8rem;
+    color: var(--text-light);
+}
+
+/* Mensaje después de cada acción */
+.aviso-flotante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 50;
+    max-width: 380px;
+    box-shadow: var(--shadow);
+}
+
+/* Pantallas chicas */
+@media (max-width: 900px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .sidebar .logo {
+        margin-bottom: 16px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .sidebar nav button {
+        padding: 8px 12px;
+        font-size: .85rem;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .search {
+        display: none;
+    }
+}
