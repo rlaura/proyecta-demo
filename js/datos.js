@@ -41,7 +41,7 @@ function datosIniciales() {
             { id: 4, apellido: 'Benítez', nombre: 'Lucas', usuario: 'lucas.benitez', equipo: 1, rol: 4 },
             { id: 5, apellido: 'Ruiz', nombre: 'Martina', usuario: 'martina.ruiz', equipo: 2, rol: 1 },
             { id: 6, apellido: 'Medina', nombre: 'Joaquín', usuario: 'joaquin.medina', equipo: 2, rol: 2 },
-            { id: 7, apellido: 'Herrera', nombre: 'Sofía', usuario: 'sofia.herrera', equipo: 2, rol: 3 },
+            { id: 7, apellido: 'Vera', nombre: 'Sofía', usuario: 'sofia.vera', equipo: 2, rol: 3 },
             { id: 8, apellido: 'Castro', nombre: 'Bruno', usuario: 'bruno.castro', equipo: 2, rol: 4 }
         ],
 
